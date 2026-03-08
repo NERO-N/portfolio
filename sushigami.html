@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushi Restaurant Website</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+padding:60px 8%;
+}
+
+header{
+text-align:center;
+margin-bottom:50px;
+}
+
+header h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+header p{
+color:#94a3b8;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+transition:0.35s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+display:none;
+align-items:center;
+justify-content:center;
+padding:40px;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:12px;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:32px;
+cursor:pointer;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Sushi Restaurant Website</h1>
+<p>A showcase of design and development screenshots</p>
+</header>
+
+<section class="gallery">
+
+<img src="images/sushigami1.png" onclick="openImage(this.src)">
+<img src="images/sushigami2.png" onclick="openImage(this.src)">
+<img src="images/sushigami3.png" onclick="openImage(this.src)">
+<img src="images/sushigami4.png" onclick="openImage(this.src)">
+<img src="images/sushigami5.png" onclick="openImage(this.src)">
+<img src="images/sushigami6.png" onclick="openImage(this.src)">
+<img src="images/sushigami7.png" onclick="openImage(this.src)">
+<img src="images/sushigami8.png" onclick="openImage(this.src)">
+<img src="images/sushigami9.png" onclick="openImage(this.src)">
+
+</section>
+
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeImage()">×</span>
+<img id="lightbox-img">
+</div>
+
+<script>
+
+function openImage(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+}
+
+function closeImage(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
